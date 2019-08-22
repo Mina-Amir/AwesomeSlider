@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.test {
+    overflow: hidden;
+    position: relative;
+    padding: 0 30px;
+    ul {
+        position: relative;
+        display: block;
+        list-style: none;
+        padding-inline-start: 0;
+        margin: 0;
+        & > li {
+            display: inline-block;
+            /* text-align: center; */
+        }
+    }
+    .slides-buttons {
+        background: transparent;
+        border: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #000;
+        &.slider-prev {
+            left: 0;
+        }
+        &.slider-next{
+            right: 0;
+        }
+
+    }
+}

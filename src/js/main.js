@@ -1,6 +1,4 @@
-var event = new Event('initSlider');
-function Slider(e){
-    console.log(e.target)
-}
-document.getElementById('test').addEventListener('initSlider' , Slider)
-document.getElementById('test').dispatchEvent(event);
+import Slider from './slider'
+document.addEventListener('DOMContentLoaded', function() {
+    Slider(document.querySelector('.test')).init()
+})

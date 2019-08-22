@@ -31,6 +31,11 @@
 //     console.log(finalOptions)
 //     console.groupEnd()
 // }
-let slider = (function(){
-    console.log(hello)
-})()
+export default function Slider(el){
+    function init(el){
+        var wrapper = document.createElement('div')
+        wrapper.classList.add('test')
+        el.parentNode.insertBefore(wrapper, el)
+        wrapper.appendChild(el)
+    }
+}

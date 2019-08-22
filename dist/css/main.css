@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.test {
+  overflow: hidden;
+  position: relative;
+  padding: 0 30px; }
+  .test ul {
+    position: relative;
+    display: block;
+    list-style: none;
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
+    margin: 0; }
+    .test ul > li {
+      display: inline-block;
+      /* text-align: center; */ }
+  .test .slides-buttons {
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000; }
+    .test .slides-buttons.slider-prev {
+      left: 0; }
+    .test .slides-buttons.slider-next {
+      right: 0; }
