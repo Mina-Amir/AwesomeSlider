@@ -1,13 +1,6 @@
-// import 
-//     $("#test ul").slider({
-//         items: 4,
-//         responsive: [
-//             {
-//                 breakpoint: 800,
-//                 settings: {
-//                     items: 2
-//                 }
-//             }
-//         ]
-//     })
-// })
+var event = new Event('initSlider');
+function Slider(e){
+    console.log(e.target)
+}
+document.getElementById('test').addEventListener('initSlider' , Slider)
+document.getElementById('test').dispatchEvent(event);
