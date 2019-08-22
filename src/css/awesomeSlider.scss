@@ -1,15 +1,9 @@
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-    padding: 0;
-}
-.test {
+@import './fontawesome/fontawesome.scss';
+.slider-container {
     overflow: hidden;
     position: relative;
     padding: 0 30px;
-    ul {
+    .slider-track {
         position: relative;
         display: block;
         list-style: none;
@@ -27,10 +21,10 @@ body {
         top: 50%;
         transform: translateY(-50%);
         color: #000;
-        &.slider-prev {
+        &.slider-button-prev {
             left: 0;
         }
-        &.slider-next{
+        &.slider-button-next{
             right: 0;
         }
 

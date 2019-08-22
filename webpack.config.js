@@ -3,10 +3,10 @@ const webpack = require("webpack");
 const webpack_rules = [];
 const webpackOption = {
     mode:'development',
-    entry: ["./src/js/main.js", "./src/css/main.scss"],
+    entry: ["./src/js/main.js", "./src/css/awesomeSlider.scss"],
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "js/main.js"
+        filename: "js/main.min.js"
     },
     module: {
         rules: webpack_rules
