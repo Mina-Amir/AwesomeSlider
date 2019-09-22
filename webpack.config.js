@@ -1,16 +1,28 @@
-const path = require("path");
-const webpack = require("webpack");
-const webpack_rules = [];
+const path = require("path")
+const webpack = require("webpack")
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const webpack_rules = []
+const weabck_plugins = []
 const webpackOption = {
     mode:'development',
-    entry: ["./src/js/main.js", "./src/css/awesomeSlider.scss"],
+    entry: {
+        main: "./src/js/main.js", 
+        slider: ["./src/js/slider.js", "./src/css/awesomeSlider.scss", "./index.html"],
+    },
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "js/main.min.js"
+        filename: "js/[name].min.js",
+        path: path.resolve(__dirname, "dist")
     },
     module: {
         rules: webpack_rules
-    }
+    },
+    plugins: weabck_plugins,
+    // devServer:{
+    //     contentBase: './',
+    //     publicPath: './dist',
+    //     inline: true,
+    //     hot: true,
+    // },
 };
 let babelLoader = {
     test: /\.js$/,
@@ -45,6 +57,15 @@ let sassCompiler = {
         }
     ]
 }
-webpack_rules.push(babelLoader);
+let htmlWatch = {
+    test: /\.html$/,
+    loader: "raw-loader"
+}
+let copyPlugin = new CopyWebpackPlugin([
+    { from: 'src/images', to: 'images' }
+])
+webpack_rules.push(babelLoader)
 webpack_rules.push(sassCompiler)
-module.exports = webpackOption;
+webpack_rules.push(htmlWatch)
+weabck_plugins.push(copyPlugin)
+module.exports = webpackOption
